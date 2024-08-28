@@ -1,15 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerCharacter : MonoBehaviour
 {
-    public float moveSpeed = 5f; 
+    public float moveSpeed = 10f; 
     public float minX = -5f; 
-    public float maxX = 5f;  
+    public float maxX = 5f;
+    public GameObject Player;
+    public GameObject DamagedPlayer;
+    bool IsPlayerInEffect = false;
+ 
 
-    private void Update()
+    private void Start()
     {
+
+        Player.SetActive(true);
+        DamagedPlayer.SetActive(false);
+    }
+    private void Update()
+    { 
+
         float moveInput = Input.GetAxis("Horizontal");
 
         Vector3 newPosition = transform.position + new Vector3(moveInput * moveSpeed * Time.deltaTime, 0f, 0f);
@@ -18,5 +30,37 @@ public class PlayerCharacter : MonoBehaviour
 
         transform.position = newPosition;
     }
+    public void DebuffPlayer()
+    {
+        if (IsPlayerInEffect == false)
+        {
+            IsPlayerInEffect = true;
+            Player.SetActive(false);
+            DamagedPlayer.SetActive(true);
+            moveSpeed = 5f;
+
+            StartCoroutine(WaitToReturnPlayer());
+
+        }
+    }
+    public void BuffPlayer()
+    {
+        if (IsPlayerInEffect == false)
+        {
+            IsPlayerInEffect = true;
+            moveSpeed = 15f;
+            StartCoroutine(WaitToReturnPlayer());
+        }
+    }
+    private IEnumerator WaitToReturnPlayer()
+    {
+        yield return new WaitForSeconds(5f);
+
+        moveSpeed = 10f;
+        Player.SetActive(true);
+        DamagedPlayer.SetActive(false);
+        IsPlayerInEffect = false;
+    }
+
 }
 
