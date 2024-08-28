@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
+
 public class PlayerCharacter : MonoBehaviour
 {
     public float moveSpeed = 10f; 
@@ -11,11 +12,11 @@ public class PlayerCharacter : MonoBehaviour
     public GameObject Player;
     public GameObject DamagedPlayer;
     bool IsPlayerInEffect = false;
- 
 
+    private AudioSource audioSource;
     private void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
         Player.SetActive(true);
         DamagedPlayer.SetActive(false);
     }
@@ -34,6 +35,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (IsPlayerInEffect == false)
         {
+            audioSource.Play();
             IsPlayerInEffect = true;
             Player.SetActive(false);
             DamagedPlayer.SetActive(true);
