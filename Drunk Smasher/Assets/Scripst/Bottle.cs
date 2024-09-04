@@ -9,7 +9,11 @@ public class Bottle : MonoBehaviour
     public float lifeTime = 4f;
     public bool IsObstaclePunched = false;
     public PlayerCharacter playerCharacter;
-    
+
+    public GameObject obstacle;
+    public GameObject ObstaclePease1;
+    public GameObject ObstaclePease2;
+    public GameObject ObstaclePease3;
     private void Start()
     {
         Destroy(gameObject, lifeTime);
@@ -28,8 +32,15 @@ public class Bottle : MonoBehaviour
         }
         else if (IsObstaclePunched == true)
         {
+            obstacle.SetActive(false);
+            ObstaclePease1.SetActive(true);
+            ObstaclePease2.SetActive(true);
+            ObstaclePease3.SetActive(true);
             transform.Translate(Vector3.forward * 30f * Time.deltaTime);
-            transform.Rotate(Vector3.back, 1000f * Time.deltaTime);
+
+            ObstaclePease1.transform.Rotate(Vector3.up, 1000f * Time.deltaTime);
+            ObstaclePease2.transform.Rotate(Vector3.up, 1000f * Time.deltaTime);
+            ObstaclePease3.transform.Rotate(Vector3.up, 1000f * Time.deltaTime);
         }
         
     }

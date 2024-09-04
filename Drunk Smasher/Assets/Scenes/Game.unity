@@ -524,7 +524,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -581,14 +581,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.39926422, y: 0.26580986, z: -0.112737685, w: 0.87018585}
+  m_LocalRotation: {x: 0.44452202, y: -0.1776973, z: 0.08019269, w: 0.8742957}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 49.008, y: 34.611, z: 1.402}
+  m_LocalEulerAnglesHint: {x: 53.686, y: -23.847, z: -1.718}
 --- !u!1 &715612349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,7 +1199,7 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 3154447249759556604, guid: fe99622b2324f7e489c93d00e4189f37, type: 3}
   - {fileID: 6082436925379061954, guid: 9e46452e22f62e64b8a42b01a9b35a2e, type: 3}
-  - {fileID: 4200219701877728828, guid: ea881ae357346374ca51cfaaae106189, type: 3}
+  - {fileID: 1589270825339915405, guid: 68de7366ab4b59146ab458568f3f35b5, type: 3}
   - {fileID: 5302053713802047429, guid: adbd1a6f078a8324c858c2cc5e46a621, type: 3}
   obstacleSpawnPoint: {fileID: 982106679}
   initialSpawnInterval: 5
