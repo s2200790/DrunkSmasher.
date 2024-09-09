@@ -13,7 +13,10 @@ public class PlayerCharacter : MonoBehaviour
     public GameObject DamagedPlayer;
     bool IsPlayerInEffect = false;
 
+    public AudioClip BuffAudioClip;
+    public AudioClip DebuffAudioClip;
     private AudioSource audioSource;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -35,7 +38,8 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (IsPlayerInEffect == false)
         {
-            audioSource.Play();
+            audioSource.PlayOneShot(DebuffAudioClip, 0.7f);
+
             IsPlayerInEffect = true;
             Player.SetActive(false);
             DamagedPlayer.SetActive(true);
@@ -49,6 +53,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (IsPlayerInEffect == false)
         {
+            audioSource.PlayOneShot(BuffAudioClip, 0.7f);
             IsPlayerInEffect = true;
             moveSpeed = 15f;
             StartCoroutine(WaitToReturnPlayer());
