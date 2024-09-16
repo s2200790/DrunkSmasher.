@@ -14,7 +14,7 @@ public class ObstacleSpawn : MonoBehaviour
     public float minimumSpawnInterval = 0.5f;
 
     public TMP_Text BossMoney;
-    int Money = 400;
+    int Money = 300;
 
     public static int PuchedPlayer = 0;
 

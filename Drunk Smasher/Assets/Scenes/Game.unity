@@ -228,13 +228,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.59188575, y: 0.5513439, z: 1.1990671}
-  m_Center: {x: -0.036347914, y: 1.5727569, z: -0.019945195}
---- !u!1 &186855958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 891ed4ea5a447e445829b2cd75f20da5, type: 3}
-  m_PrefabInstance: {fileID: 1105282554}
-  m_PrefabAsset: {fileID: 0}
+  m_Size: {x: 0.59188575, y: 6.3258414, z: 1.1990671}
+  m_Center: {x: -0.0363479, y: 2.477972, z: -0.019945197}
 --- !u!1001 &198101293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -898,7 +893,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Boss Money:
 
-    400$'
+    300$'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1206,72 +1201,6 @@ MonoBehaviour:
   spawnIntervalDecreaseRate: 0.1
   minimumSpawnInterval: 1
   BossMoney: {fileID: 949117202}
---- !u!1001 &1055468789
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1105282555}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_Name
-      value: DrunkSmasherPlayerDamaged
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
---- !u!1 &1055468790 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4dd389c26f6092e469a99686236aa12b, type: 3}
-  m_PrefabInstance: {fileID: 1055468789}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1105282554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1586,7 +1515,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b3316417fa14f3344933fd4a20c79a88, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2087,10 +2016,10 @@ MonoBehaviour:
   moveSpeed: 10
   minX: -6
   maxX: 6.5
-  Player: {fileID: 186855958}
-  DamagedPlayer: {fileID: 1055468790}
   BuffAudioClip: {fileID: 8300000, guid: d9cf881b0b37ffa49a3396f506e1f69a, type: 3}
   DebuffAudioClip: {fileID: 8300000, guid: d891939324ccf3540952afe17c7c0950, type: 3}
+  NormalScale: {x: 0.45, y: 0.45, z: 0.45}
+  DamagedScale: {x: 0.45, y: 0.25, z: 0.45}
 --- !u!114 &1703301616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2104,6 +2033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 400
+  WooshClip: {fileID: 8300000, guid: 09dcf54ef1802bb49b5496c376502d02, type: 3}
 --- !u!54 &1703301617
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2144,7 +2074,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

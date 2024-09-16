@@ -9,19 +9,19 @@ public class PlayerCharacter : MonoBehaviour
     public float moveSpeed = 10f; 
     public float minX = -5f; 
     public float maxX = 5f;
-    public GameObject Player;
-    public GameObject DamagedPlayer;
     bool IsPlayerInEffect = false;
 
     public AudioClip BuffAudioClip;
     public AudioClip DebuffAudioClip;
     private AudioSource audioSource;
 
+    public Vector3 NormalScale = new Vector3(0.45f, 0.45f, 0.45f);
+    public Vector3 DamagedScale = new Vector3(0.2f, 0.2f, 0.2f);
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        Player.SetActive(true);
-        DamagedPlayer.SetActive(false);
+        transform.localScale = NormalScale;
     }
     private void Update()
     { 
@@ -41,8 +41,7 @@ public class PlayerCharacter : MonoBehaviour
             audioSource.PlayOneShot(DebuffAudioClip, 0.7f);
 
             IsPlayerInEffect = true;
-            Player.SetActive(false);
-            DamagedPlayer.SetActive(true);
+            transform.localScale = DamagedScale;
             moveSpeed = 5f;
 
             StartCoroutine(WaitToReturnPlayer());
@@ -64,9 +63,7 @@ public class PlayerCharacter : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         moveSpeed = 10f;
-        Player.SetActive(true);
-        DamagedPlayer.SetActive(false);
-        IsPlayerInEffect = false;
+        transform.localScale = NormalScale;
     }
 
 }

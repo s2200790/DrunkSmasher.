@@ -8,24 +8,29 @@ public class PlayerPunch : MonoBehaviour
     private Quaternion originalRotation; 
     private Quaternion targetRotation; 
     private bool isRotating = false;
-    private bool returnToOriginal = false; 
+    private bool returnToOriginal = false;
 
+    public AudioClip WooshClip;
+    private AudioSource audioSource;
     private void Start()
     {
         originalRotation = transform.rotation;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-
+        
         if (!isRotating && !returnToOriginal)
         {
             if (Input.GetMouseButtonDown(0)) 
             {
+                audioSource.PlayOneShot(WooshClip, 0.7f);
                 StartRotation(160f); 
             }
             else if (Input.GetMouseButtonDown(1))
             {
+                audioSource.PlayOneShot(WooshClip, 0.7f);
                 StartRotation(-160f); 
             }
         }
