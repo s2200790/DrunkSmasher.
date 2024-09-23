@@ -10,6 +10,7 @@ public class Beer : MonoBehaviour
     public static int CrushedBeers = 0;
     void Start()
     {
+        CrushedBeers = 0;
         NormalBeer.SetActive(true);
         CrushedBeer.SetActive(false);
         audioSource = GetComponent<AudioSource>();

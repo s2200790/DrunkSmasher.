@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 
 public class PlayerCharacter : MonoBehaviour
@@ -9,7 +9,6 @@ public class PlayerCharacter : MonoBehaviour
     public float moveSpeed = 10f; 
     public float minX = -5f; 
     public float maxX = 5f;
-    bool IsPlayerInEffect = false;
 
     public AudioClip BuffAudioClip;
     public AudioClip DebuffAudioClip;
@@ -18,6 +17,11 @@ public class PlayerCharacter : MonoBehaviour
     public Vector3 NormalScale = new Vector3(0.45f, 0.45f, 0.45f);
     public Vector3 DamagedScale = new Vector3(0.2f, 0.2f, 0.2f);
 
+    public GameObject Skin1;
+    public GameObject Skin2;
+     public GameObject Skin3;
+
+    public bool isPlayerInEffect = false;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -36,35 +40,51 @@ public class PlayerCharacter : MonoBehaviour
     }
     public void DebuffPlayer()
     {
-        if (IsPlayerInEffect == false)
+        if (isPlayerInEffect == false)
         {
+            isPlayerInEffect = true;
             audioSource.PlayOneShot(DebuffAudioClip, 0.7f);
-
-            IsPlayerInEffect = true;
             transform.localScale = DamagedScale;
             moveSpeed = 5f;
-
             StartCoroutine(WaitToReturnPlayer());
-
         }
     }
     public void BuffPlayer()
     {
-        if (IsPlayerInEffect == false)
+        if (isPlayerInEffect == false)
         {
+            isPlayerInEffect = true;
+            transform.localScale = NormalScale;
             audioSource.PlayOneShot(BuffAudioClip, 0.7f);
-            IsPlayerInEffect = true;
             moveSpeed = 15f;
             StartCoroutine(WaitToReturnPlayer());
         }
     }
     private IEnumerator WaitToReturnPlayer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
 
         moveSpeed = 10f;
         transform.localScale = NormalScale;
+        isPlayerInEffect = false;
     }
-
+    public void ActiveSkin1()
+    {
+        Skin1.SetActive(true);
+        Skin2.SetActive(false);
+        Skin3.SetActive(false);
+    }
+    public void ActiveSkin2()
+    {
+        Skin1.SetActive(false);
+        Skin2.SetActive(true);
+        Skin3.SetActive(false);
+    }
+    public void ActiveSkin3()
+    {
+        Skin1.SetActive(false);
+        Skin2.SetActive(false);
+        Skin3.SetActive(true);
+    }
 }
 

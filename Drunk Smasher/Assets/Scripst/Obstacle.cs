@@ -15,6 +15,7 @@ public class Obstacle : MonoBehaviour
     public GameObject ObstaclePease3;
     private void Start()
     {
+
         Destroy(gameObject, lifeTime);
 
         if (playerCharacter == null)

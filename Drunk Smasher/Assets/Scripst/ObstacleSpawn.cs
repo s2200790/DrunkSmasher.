@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using TMPro.EditorUtilities;
 using UnityEngine.SceneManagement;
 
 public class ObstacleSpawn : MonoBehaviour
@@ -23,6 +22,7 @@ public class ObstacleSpawn : MonoBehaviour
 
     private void Start()
     {
+        PuchedPlayer = 0;
         currentSpawnInterval = initialSpawnInterval;
         timeSinceLastSpawn = 0f;
     }
